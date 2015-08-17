@@ -11,8 +11,10 @@ var users = require('./routes/users');
 var app = express();
 
 // view engine setup
+var option = {beautify: true};
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+app.set('view engine', 'jsx');
+app.engine('jsx', require('express-react-views').createEngine(option));
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
